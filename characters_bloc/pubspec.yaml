@@ -11,7 +11,7 @@ environment:
   sdk: '>=2.18.0-271.2.beta <3.0.0'
 
 dependencies:
-  bloc: ^8.0.3
+  
   flutter_bloc: ^8.0.1
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
