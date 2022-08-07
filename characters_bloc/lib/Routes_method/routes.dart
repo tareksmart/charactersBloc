@@ -1,4 +1,5 @@
 class Routes {
-  static const home = 'home';
-  static const characters = 'char';
+
+  static const characters = '/';
+  static const charactersDetail = 'charDetail';
 }

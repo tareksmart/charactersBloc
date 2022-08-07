@@ -8,10 +8,10 @@ class CharacterRepository {
 
   Future<List<CharactersModel>> getAllChar() async {
     final characters = await characterWebServic.getAllCharacters();
-    var characterToMap = characters
+    var characterTolist = characters
         .map((character) => CharactersModel.fromJson(character))
         .toList();//بحول الماب اللى جاى من اب اى الى ليست
 
-    return characterToMap;
+    return characterTolist;
   }
 }

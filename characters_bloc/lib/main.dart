@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: SPecialRouter.generateRoute,
+      onGenerateRoute: SPecialRouter().generateRoute,//object from specialRouter like ()
     );
   }
 }
