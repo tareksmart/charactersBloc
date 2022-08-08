@@ -13,5 +13,6 @@ class CharacterRepository {
         .toList();//بحول الماب اللى جاى من اب اى الى ليست
 
     return characterTolist;
+    print('$characterTolist[0]repoo=========');
   }
 }

@@ -18,7 +18,8 @@ class CharacterWebServic {
     try {
       var response = await dio.get(
           'characters'); //بمرر الطلب او request//https://www.breakingbadapi.com/api/characters
-      return response.data();
+      return response.data;
+      print('${response.data[0]}========web');
     } on Exception catch (e) {
       print('$e');
       return [];
