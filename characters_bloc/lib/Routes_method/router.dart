@@ -1,6 +1,7 @@
 import 'package:characters_bloc/Routes_method/routes.dart';
 import 'package:characters_bloc/bloc/cubit/characters_cubit.dart';
 import 'package:characters_bloc/data/api/character_web_service.dart';
+import 'package:characters_bloc/data/model/characters_model.dart';
 import 'package:characters_bloc/data/repo/character_repository.dart';
 import 'package:characters_bloc/presentaion/screens/characters_screen.dart';
 
@@ -32,7 +33,8 @@ class SPecialRouter {
 
        
       case Routes.charactersDetail:
-        return MaterialPageRoute(builder: (_) => Charactersdetails());
+        final character=setting.arguments as CharactersModel;
+        return MaterialPageRoute(builder: (_) => Charactersdetails(character: character,));
     }
   }
 }
