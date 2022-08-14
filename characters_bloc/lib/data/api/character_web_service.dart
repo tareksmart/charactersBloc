@@ -25,4 +25,15 @@ class CharacterWebServic {
       return [];
     }
   }
+
+  Future<List<dynamic>> getQuoteCharacter(String character)async{
+    try
+        {
+          var response=await dio.get('quotes',queryParameters: {'author':character});
+          return response.data;
+        } on Exception catch(e){
+      print('$e');
+      return [];
+    }
+  }
 }

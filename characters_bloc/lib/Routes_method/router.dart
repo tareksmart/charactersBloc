@@ -30,11 +30,22 @@ class SPecialRouter {
                   create: (_) => CharactersCubit(characterRepository),
                   child: CharacterScreen(),
                 ));
-
+    /*
+لو عايز امرر ال cubit المعرف فوق فى ال constructor اللى هو ده
+ charactersCubit = CharactersCubit(characterRepository);
+يبقى هاعمل
+BlockProvider.value(
+كده معناه ان البلوك مش فوق الشاشة بتاعت details هو فوق شاشة
+characterScreen
+واللى تحتها.
+بكده انا بمرر بلوك من شاشة الى شاشة اخرى لاتمت بصلة او مش موجوده فى نفس شجرى ال character Screen
+*/
        
       case Routes.charactersDetail:
         final character=setting.arguments as CharactersModel;
-        return MaterialPageRoute(builder: (_) => Charactersdetails(character: character,));
+        return MaterialPageRoute(builder: (_) => BlocProvider(
+          create: (BuildContext cont)=>CharactersCubit(characterRepository),
+            child: Charactersdetails(character: character,)));
     }
   }
 }

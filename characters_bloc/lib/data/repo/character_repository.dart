@@ -1,5 +1,6 @@
 import 'package:characters_bloc/data/api/character_web_service.dart';
 import 'package:characters_bloc/data/model/characters_model.dart';
+import 'package:characters_bloc/data/model/quotes.dart';
 
 class CharacterRepository {
   final CharacterWebServic characterWebServic;
@@ -14,5 +15,13 @@ class CharacterRepository {
 
     return characterTolist;
     print('$characterTolist[0]repoo=========');
+  }
+  Future<List<quotes>> getQuote(String charName)async{
+    final quote=await characterWebServic.getQuoteCharacter(charName);
+    var quotList=quote.map((char) => quotes.fromJson(char)).toList();
+    print(quotList);
+    print('===========================');
+    return quotList;
+
   }
 }

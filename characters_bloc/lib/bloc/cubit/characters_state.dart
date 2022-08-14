@@ -13,3 +13,8 @@ class CharacterLoaded extends CharactersState {
 
   CharacterLoaded(this.charactersList);
 }
+//ممكن نعمل state تانى و cubit تانى
+class QuoteLoaded extends CharactersState{
+  final List<quotes> quoteList;
+  QuoteLoaded(this.quoteList);
+}
