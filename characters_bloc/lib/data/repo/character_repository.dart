@@ -24,4 +24,8 @@ class CharacterRepository {
     return quotList;
 
   }
+  Future <dynamic> getError()async{
+    var response=await characterWebServic.getError();
+    return response;
+  }
 }

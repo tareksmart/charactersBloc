@@ -18,3 +18,8 @@ class QuoteLoaded extends CharactersState{
   final List<quotes> quoteList;
   QuoteLoaded(this.quoteList);
 }
+class CharacterLoadedError extends CharactersState {
+  final dynamic charactersError;
+
+  CharacterLoadedError(this.charactersError);
+}

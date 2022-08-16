@@ -36,4 +36,35 @@ class CharacterWebServic {
       return [];
     }
   }
+  Future <dynamic> getError()async{
+    late final response;
+
+    try {
+      //404
+      response=await dio.get(apiLink);
+
+    } on DioError catch (e) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx and is also not 304.
+      if (e.response != null) {
+        // print(e.response!.data);
+        // print('=========================================');
+        // print(e.response!.headers);
+        // print('=========================================');
+        // print(e.response!.requestOptions);
+        // print('=========================================');
+        response=e.message;
+
+
+      } else {
+        // Something happened in setting up or sending the request that triggered an Error
+        // print('requestOptions================');
+        // print(e.requestOptions);
+        // print('${e.message} e.messege');
+        response=e.message;
+
+      }
+    }
+    return response;
+  }
 }

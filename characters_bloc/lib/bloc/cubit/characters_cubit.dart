@@ -14,9 +14,15 @@ and return list of characters
 */
 class CharactersCubit extends Cubit<CharactersState> {
   final CharacterRepository characterRepository;
+
   List<CharactersModel> charactersLista = [];
   CharactersCubit(this.characterRepository) : super(CharactersInitial());
+  dynamic getError(){
 
+    var respons=characterRepository.getError().then((value) => emit(CharacterLoadedError(value)));
+    print('===================================err ${respons}');
+    return respons;
+  }
   List<CharactersModel> getAllCharacter() {
     characterRepository.getAllChar().then((value) {
       emit(CharacterLoaded(value)); //هنا ارسلنا ال state
@@ -33,4 +39,5 @@ class CharactersCubit extends Cubit<CharactersState> {
           ),
         );
   }
+
 }
